@@ -31,12 +31,19 @@ class BaseServiceProvider extends ServiceProvider
         $this->setupRoutes($this->app->router);
 
         // PUBLISH FILES
+
         // publish config file
         $this->publishes([ __DIR__.'/config/config.php' => config_path('backpack/base.php'), ], 'config');
+
         // publish lang files
         $this->publishes([ __DIR__.'/resources/lang' => resource_path('lang/vendor/backpack'), ], 'lang');
+
         // publish views
         $this->publishes([ __DIR__.'/resources/views' => resource_path('views/vendor/backpack/base'), ], 'views');
+
+        // publish public Backpack Base assets
+        $this->publishes([__DIR__.'/public' => public_path('vendor/backpack')], 'public');
+
         // publish public AdminLTE assets
         $this->publishes([ base_path('vendor/almasaeed2010/adminlte') => public_path('vendor/adminlte'), ], 'adminlte');
 
