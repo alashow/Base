@@ -21,6 +21,130 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+-------
+
+## [0.9.6] - 2018-06-04
+
+### Added
+- Arabic language, thanks to @allam2002;
+
+### Fixed
+- #288 and #284 - moved check license method to boot instead of register;
+
+
+## [0.9.5] - 2018-05-02
+
+### Fixed
+- helpers are now loaded in the register function, to avoid undefined function errors in subsequent Backpack packages, where they're loaded before Base;
+
+
+## [0.9.4] - 2018-05-02
+
+### Fixed
+- ```backpack_avatar_url()``` helper had a wrong function name existence declaration; merges #280;
+- ```backpack_avatar_url()``` helper now uses a custom function if it exists, otherwise an accessor; merges #281;
+
+## [0.9.3] - 2018-04-17
+
+### Fixed
+- ```login.php``` view now uses ```$username``` instead of helper, to allow developers to overwrite this in their LoginController; fixes #276;
+
+
+## [0.9.2] - 2018-03-29
+
+### Fixed
+- ```custom.php``` route now uses the ```web``` middleware by default; merges #268; fixes #271;
+
+
+## [0.9.1] - 2018-03-22
+
+### Fixed
+- config file was using a translation item, which is not possible;
+
+
+## [0.9.0] - 2018-03-22
+
+### Added
+- flexbox css helper class;
+- support for HTML messages inside Alert bubbles, when triggered from PHP;
+- added publish lang command;
+- added command to publish only the minimum amount of files needed for Backpack to work;
+- ```sidebar_content.blade.php``` file, so that we can add sidebar items using a command
+- ```php artisan backpack:base:add-sidebar-content``` command;
+- ```php artisan backpack:base:add-custom-route``` command;
+- ability for developer to use a custom auth guard;
+- ability for developer to rename the ```admin``` middleware;
+- ```before_styles```, ```after_styles```, ```before_scripts```, ```after_scripts``` stacks, to which developers can ```@push```;
+
+### Fixed
+- the installation command now only publishes the minimum amount of files, by default;
+- AdminLTE now uses the latest version;
+
+-------
+
+## [0.8.9] - 2018-02-08
+
+## Fixed
+- NL translation;
+- ES translation;
+- Security issue #240 - user insert new fields and change restricted info about him;
+
+
+## [0.8.8] - 2018-02-08
+
+## Added
+- Laravel 5.6 support;
+
+
+## [0.8.7] - 2018-01-18
+
+## Added
+- progress bar to installer;
+- debug option to installer;
+- configurable timeout option to installer;
+
+## Fixed
+- hide secondary pace loader to avoid CRUD list page three-separate-loaders syndrome;
+
+
+## [0.8.6] - 2018-01-10
+
+## Fixed
+- ajax datatable loading screen;
+
+
+## [0.8.5] - 2018-01-03
+
+## Added
+- user image to My Account side menu;
+- link on general sidebar user image;
+- link on general sidebar user name;
+
+## Fixed
+- Greek translation;
+- French translation;
+
+
+## [0.8.4] - 2017-12-12
+
+## Fixed
+- Chinese translation;
+- Upon installation, vendor path is calculated instead of relying on base_path() - merged #223, fixes #222;
+
+## Added
+- BACKPACK_REGISTRATION_OPEN environment variable;
+
+## [0.8.3] - 2017-12-02
+
+## Fixed
+-  ensure the installer publishes files correctly on all OSs - refs #216;
+-  Using guard() method to access the current guard in MyAccountController - merged #215;
+-  updated LV translation;
+-  added zh-hant translation;
+-  updated German translation;
+-  updated Italian translation;
+-  user avatar uses customized guard;
+
 
 ## [0.8.2] - 2017-11-07
 
